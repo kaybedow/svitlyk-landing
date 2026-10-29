@@ -212,8 +212,8 @@ dialog#modal{width:min(460px,calc(100vw - 24px));max-height:calc(100vh - 24px);m
 dialog#modal::backdrop{background:rgba(12,10,20,.75)}
 dialog#modal[open]{animation:pop .18s ease-out}
 @keyframes pop{from{transform:translateY(12px);opacity:0}to{transform:none;opacity:1}}
-.x{position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;background:none;font-size:1.8rem;line-height:1;color:var(--muted);cursor:pointer;border-radius:8px}
-@media (hover:hover){.x:hover{background:var(--bg);color:var(--ink)}}
+.x{position:absolute;top:8px;right:8px;z-index:2;width:36px;height:36px;border:0;border-radius:50%;background:var(--card);box-shadow:0 1px 4px rgba(22,19,31,.25);font-size:1.6rem;line-height:1;color:var(--ink);cursor:pointer}
+@media (hover:hover){.x:hover{background:var(--bg)}}
 .m-head h2{font-size:1.4rem;padding-right:40px}
 .m-sum{display:flex;align-items:baseline;gap:12px;margin:10px 0 14px;flex-wrap:wrap}
 .m-sum strong{font-size:1.7rem;font-weight:800;white-space:nowrap}
