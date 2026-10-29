@@ -164,8 +164,10 @@
   }
 
   let tick = null;
+  let sent = false;
+
   function renderPromo() {
-    const state = promoState();
+    const state = sent ? 'sent' : promoState();
     $('promoScratch').hidden = state !== 'new';
     $('promoActive').hidden = state !== 'active';
     $('promoEnded').hidden = state !== 'ended';
@@ -324,6 +326,7 @@
   }
 
   function showThanks(data) {
+    sent = true;
     track('lead', { value: data.total, currency: 'UAH', qty: chosen, promo: data.promo || null });
     $('fields').style.display = 'none';
     modal.querySelector('.m-head').hidden = true;
@@ -332,6 +335,20 @@
     clearInterval(tick);
     $('thanks').style.display = 'block';
   }
+
+  $('againBtn').addEventListener('click', () => {
+    sent = false;
+    $('thanks').style.display = 'none';
+    $('demoNote').hidden = true;
+    $('fields').style.display = '';
+    modal.querySelector('.m-head').hidden = false;
+    const btn = form.querySelector('button[type=submit]');
+    btn.disabled = false;
+    btn.textContent = 'Замовити з оплатою при отриманні';
+    renderPromo();
+    phone.focus();
+    phone.select();
+  });
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
