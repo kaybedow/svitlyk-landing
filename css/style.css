@@ -68,7 +68,6 @@ header{background:var(--night);color:#fff}
 .hero-bg{position:absolute;inset:0;z-index:-3}
 .hero-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%);opacity:0;transition:opacity .9s ease}
 .hero-bg video.on{opacity:1}
-.hero-bg video[data-scene="wardrobe"]{filter:brightness(1.3)}
 .kicker{display:inline-block;color:var(--light);font-weight:700;font-size:1rem;margin-bottom:10px}
 .hero h1{font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.08;text-wrap:balance}
 .hero-list{list-style:none;padding:0;margin:16px 0 18px;display:grid;gap:9px}
@@ -84,10 +83,11 @@ header{background:var(--night);color:#fff}
 
 .lit-tag{display:inline-flex;align-items:center;gap:6px;position:absolute;z-index:1;left:var(--tx,50%);top:var(--ty,20%);transform:translate(-50%,6px) rotate(-3deg);background:var(--light);color:var(--night);font-weight:800;font-size:.95rem;padding:8px 14px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.35);white-space:nowrap;opacity:0;transition:opacity .4s,transform .4s}
 .lit-tag.show{opacity:1;transform:translate(-50%,0) rotate(-3deg)}
+.lit-tag.show .eyes i,.lit-tag.show .eyes i::after{animation-play-state:running}
 
 .eyes{display:inline-flex;gap:3px}
-.eyes i{position:relative;width:13px;height:13px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1.5px var(--night);overflow:hidden;animation:blink 3.2s infinite}
-.eyes i::after{content:"";position:absolute;top:3px;left:3px;width:6px;height:6px;border-radius:50%;background:var(--night);animation:look 3.2s ease-in-out infinite}
+.eyes i{position:relative;width:13px;height:13px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1.5px var(--night);overflow:hidden;animation:blink 3.2s infinite paused}
+.eyes i::after{content:"";position:absolute;top:3px;left:3px;width:6px;height:6px;border-radius:50%;background:var(--night);animation:look 3.2s ease-in-out infinite paused}
 @keyframes blink{0%,46%,54%,100%{transform:scaleY(1)}50%{transform:scaleY(.1)}}
 @keyframes look{0%,30%{transform:translateX(-2px)}40%,100%{transform:translateX(2px)}}
 

@@ -88,7 +88,9 @@
     }
     if (!started) {
       started = true;
-      start();
+      // відео стартує після завантаження сторінки, щоб не гальмувати першу відмальовку
+      if (document.readyState === 'complete') start();
+      else addEventListener('load', start, { once: true });
     } else if (v.ended) {
       show((current + 1) % videos.length);
     } else {
