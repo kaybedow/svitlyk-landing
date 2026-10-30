@@ -26,7 +26,7 @@
 <meta name="theme-color" content="#16131F">
 <link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/hero-720.webp" as="image" imagesrcset="img/hero-720.webp 720w, img/hero.webp 1024w" imagesizes="(max-width: 860px) 92vw, 480px" fetchpriority="high">
+<link rel="preload" href="img/scene-wardrobe-dark.webp" as="image" fetchpriority="high">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -51,11 +51,23 @@
 <main id="top">
 
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
+  <div class="hero-bg" aria-hidden="true">
+    <video class="on" data-scene="wardrobe" poster="img/scene-wardrobe-dark.webp" data-lit="img/scene-wardrobe-lit.webp" data-tag="78% 12%" style="--pos:50% 50%" muted playsinline webkit-playsinline disablepictureinpicture preload="none" tabindex="-1">
+      <source src="img/scene-wardrobe.mp4" type="video/mp4">
+      <source src="img/scene-wardrobe.webm" type="video/webm">
+    </video>
+    <video data-scene="kitchen" poster="img/scene-kitchen-dark.webp" data-lit="img/scene-kitchen-lit.webp" data-tag="50% 20%" style="--pos:56% 50%" muted playsinline webkit-playsinline disablepictureinpicture preload="none" tabindex="-1">
+      <source src="img/scene-kitchen.mp4" type="video/mp4">
+      <source src="img/scene-kitchen.webm" type="video/webm">
+    </video>
+    <span class="lit-tag" id="litTag"><span class="eyes" aria-hidden="true"><i></i><i></i></span>Датчик вас побачив</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-copy">
       <span class="kicker">LED-світильник з датчиком руху</span>
       <h1>Встали вночі, а світло вже горить</h1>
-      <p class="lead">Світлик вмикається сам, коли ви поруч, і гасне, коли пішли. Без проводів і електрика: чіпляється на магніт за пів хвилини.</p>
+      <div class="model"><div class="model-name">Світлик</div><span class="badge">без проводів</span></div>
       <ul class="hero-list">
         <li><b>Датчик</b><span>вмикається сам, бачить рух на 3 м</span></li>
         <li><b>Магніт</b><span>вішається за 30 секунд, без свердління</span></li>
@@ -63,11 +75,10 @@
       </ul>
       <div class="price"><strong>від 449 грн</strong><span>набір з 3 шт за 1 099 грн</span></div>
       <a class="btn" href="#order">Замовити з оплатою при отриманні</a>
-    </div>
-    <div class="photo" data-name="img/hero.webp">
-      <img src="img/hero.webp" srcset="img/hero-720.webp 720w, img/hero.webp 1024w" sizes="(max-width: 860px) 92vw, 480px" alt="Світлик світить у темному коридорі" width="1024" height="1024" fetchpriority="high">
+      <p class="hero-gift"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 12h18M12 8v13M12 8S10.5 3 8 4.5 9 8 12 8zm0 0s1.5-5 4-3.5S15 8 12 8z"/></svg>У формі замовлення ховається знижка −10%</p>
     </div>
   </div>
+
 </section>
 
 <div class="strip">
@@ -121,7 +132,7 @@
   </div>
 </section>
 
-<section class="tight">
+<section class="band-dark">
   <div class="wrap">
     <h2>Як працює</h2>
     <div class="how">
@@ -156,7 +167,7 @@
   </div>
 </section>
 
-<section class="tight">
+<section class="band-dark">
   <div class="wrap">
     <h2 id="specs">Характеристики</h2>
     <div class="specs">
@@ -188,17 +199,6 @@
 
 <section class="tight">
   <div class="wrap">
-    <h2>Відгуки</h2>
-    <div class="reviews">
-      <div class="review">Тут будуть реальні відгуки покупців з фото</div>
-      <div class="review">Тут будуть реальні відгуки покупців з фото</div>
-      <div class="review">Тут будуть реальні відгуки покупців з фото</div>
-    </div>
-  </div>
-</section>
-
-<section class="tight">
-  <div class="wrap">
     <h2 id="how">Як замовити</h2>
     <ol class="steps">
       <li><h3>Залиште заявку</h3><p>Ім'я і телефон, більше нічого.</p></li>
@@ -222,11 +222,12 @@
 
 <section class="order" id="order">
   <div class="wrap order-grid">
-    <div>
+    <div class="o-text">
       <h2>Замовити Світлик</h2>
-      <p class="lead">Оберіть кількість, залиште телефон, передзвонимо і відправимо. А у формі зітріть картку: там знижка.</p>
+      <p class="lead">Оберіть кількість, залиште телефон, передзвонимо і відправимо.</p>
     </div>
     <div class="order-card">
+      <div class="gift-note"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 12h18M12 8v13M12 8S10.5 3 8 4.5 9 8 12 8zm0 0s1.5-5 4-3.5S15 8 12 8z"/></svg><span><b>−10% на все замовлення</b> зітріть картку у формі, знижка діє 10 хвилин</span></div>
       <div class="packs" id="packs">
         <label><input type="radio" name="pack" value="1"><span>1 шт<small>спробувати</small></span><span class="pp">449 грн</span></label>
         <label><input type="radio" name="pack" value="3" checked><span>3 шт<small>коридор, шафа і кухня</small></span><span class="pp">1 099 грн<small>366 грн/шт</small></span></label>
@@ -235,13 +236,44 @@
       </div>
       <a class="btn full" href="#order" id="orderBtn">Замовити з оплатою при отриманні</a>
     </div>
+
+    <div class="reviews">
+      <div class="reviews-top">
+        <h3>Що кажуть покупці</h3>
+        <div class="r-nav"><button type="button" class="r-prev" aria-label="Попередні відгуки">‹</button><button type="button" class="r-next" aria-label="Наступні відгуки">›</button></div>
+      </div>
+      <div class="r-track" id="reviews" tabindex="0" aria-label="Відгуки">
+        <article class="review">
+          <div class="r-head"><span class="ava">О</span><div><b>Олена</b><small>Київ · Коридор</small></div><span class="stars" role="img" aria-label="5 з 5">★★★★★</span></div>
+          <p>Встаю вночі до дитини, а в коридорі вже світло. Нічого не треба шукати, ніхто не прокидається. Висить на магніті, не відпадає.</p>
+        </article>
+        <article class="review">
+          <div class="r-head"><span class="ava">А</span><div><b>Андрій</b><small>Харків · Шафа</small></div><span class="stars" role="img" aria-label="5 з 5">★★★★★</span></div>
+          <p>Повісив у шафі: відчиняю двері, і видно кожну полицю. Датчик спрацьовує одразу, гасне, коли закрив.</p>
+        </article>
+        <article class="review">
+          <div class="r-head"><span class="ava">І</span><div><b>Ірина</b><small>Львів · Кухня</small></div><span class="stars" role="img" aria-label="4 з 5">★★★★☆</span></div>
+          <p>Під шафками світить рівно на стільницю, дуже зручно. Мінус зірка: акумулятор треба підзаряджати, хоч і раз на кілька тижнів.</p>
+        </article>
+        <article class="review">
+          <div class="r-head"><span class="ava">Д</span><div><b>Дмитро</b><small>Одеса · Сходи</small></div><span class="stars" role="img" aria-label="5 з 5">★★★★★</span></div>
+          <p>Взяв набір із 5: сходи, коридор і шафа. Тепер не йду навпомацки. Планка на скотчі тримається міцно.</p>
+        </article>
+        <article class="review">
+          <div class="r-head"><span class="ava">М</span><div><b>Марина</b><small>Дніпро · Біля ліжка</small></div><span class="stars" role="img" aria-label="5 з 5">★★★★★</span></div>
+          <p>Поставила біля ліжка, щоб уночі не вмикати верхнє світло. Тепле, не б’є в очі. Оплатила на пошті після огляду.</p>
+        </article>
+      </div>
+      <div class="r-dots" id="rDots"></div>
+      <p class="r-note">Демо: відгуки-приклади, на бойовому сайті тут будуть реальні відгуки з фото.</p>
+    </div>
   </div>
 </section>
 
 <section class="demo">
   <div class="wrap">
     <h2>Про цей демо-проєкт</h2>
-    <p class="sub">Бренд і ціни вигадані. Спочатку згенерував один еталонний кадр товару в Nano Banana і додавав його до кожного промпту, щоб світильник на всіх фото був однаковий. Правки робив у Photopea. Відео зроблене в Google Flow з власного першого кадру кухні. Стирашка зі знижкою і таймер показані як механіка, реальної акції немає.</p>
+    <p class="sub">Бренд і ціни вигадані. Спочатку згенерував один еталонний кадр товару в Nano Banana і додавав його до кожного промпту, щоб світильник на всіх фото був однаковий. Правки робив у Photopea. Відео в блоці «Як працює» зроблене в Google Flow з власного першого кадру кухні, а фонові відео першого екрана (кухня і шафа) згенеровані в Gemini з готових кадрів товару. Стирашка зі знижкою і таймер показані як механіка, реальної акції немає.</p>
     <div class="pairs">
       <div class="pair">
         <code>Narrow apartment corridor at night, the light bar is mounted low on the wall, glowing warm light down onto the floor, a path towards a half-open bathroom door. Everything else is dark.</code>
@@ -336,5 +368,8 @@
 
 <script src="js/track.js" defer></script>
 <script src="js/main.js" defer></script>
+<script src="js/hero.js" defer></script>
+<script src="js/gallery.js" defer></script>
+<script src="js/reviews.js" defer></script>
 </body>
 </html>
